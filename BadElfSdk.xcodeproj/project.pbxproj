@@ -10,6 +10,7 @@
 		3A6346572C00E00500D8E5F1 /* BadElfSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6346562C00E00500D8E5F1 /* BadElfSdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A63465E2C00E07800D8E5F1 /* EADSessionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A63465D2C00E07800D8E5F1 /* EADSessionController.h */; };
 		3A6346602C00E09600D8E5F1 /* EADSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A63465F2C00E09600D8E5F1 /* EADSessionController.m */; };
+		3A6346642C00E64A00D8E5F1 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6346622C00E63D00D8E5F1 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		3A6346562C00E00500D8E5F1 /* BadElfSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadElfSdk.h; sourceTree = "<group>"; };
 		3A63465D2C00E07800D8E5F1 /* EADSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EADSessionController.h; sourceTree = "<group>"; };
 		3A63465F2C00E09600D8E5F1 /* EADSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EADSessionController.m; sourceTree = "<group>"; };
+		3A6346622C00E63D00D8E5F1 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6346642C00E64A00D8E5F1 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +38,7 @@
 			children = (
 				3A6346552C00E00500D8E5F1 /* BadElfSdk */,
 				3A6346542C00E00500D8E5F1 /* Products */,
+				3A6346612C00E63D00D8E5F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +58,14 @@
 				3A63465F2C00E09600D8E5F1 /* EADSessionController.m */,
 			);
 			path = BadElfSdk;
+			sourceTree = "<group>";
+		};
+		3A6346612C00E63D00D8E5F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A6346622C00E63D00D8E5F1 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,0 +1,6 @@
+framework module BadElfSdk {
+  umbrella header "BadElfSdk.h"
+  export *
+
+  module * { export * }
+}

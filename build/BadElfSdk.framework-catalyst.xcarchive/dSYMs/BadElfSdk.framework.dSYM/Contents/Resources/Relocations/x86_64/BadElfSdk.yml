@@ -1,0 +1,40 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/mwood.Charter/Library/Developer/Xcode/DerivedData/BadElfSdk-hemvqukjrgixrchaqhgjpfjdpffx/Build/Intermediates.noindex/ArchiveIntermediates/BadElfSdk/InstallationBuildProductsLocation/Library/Frameworks/BadElfSdk.framework/Versions/A/BadElfSdk'
+relocations:
+  - { offsetInCU: 0x34, offset: 0x8451C, size: 0x8, addend: 0x0, symName: _BadElfSdkVersionString, symObjAddr: 0x0, symBinAddr: 0x4F30, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x84551, size: 0x8, addend: 0x0, symName: _BadElfSdkVersionNumber, symObjAddr: 0x30, symBinAddr: 0x4F60, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x8458E, size: 0x8, addend: 0x0, symName: '-[EADSessionController _writeData]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x19E }
+  - { offsetInCU: 0x41, offset: 0x845A8, size: 0x8, addend: 0x0, symName: _EADSessionDataReceivedNotification, symObjAddr: 0xFA0, symBinAddr: 0xC778, symSize: 0x0 }
+  - { offsetInCU: 0x50, offset: 0x845B7, size: 0x8, addend: 0x0, symName: '+[EADSessionController sharedController]', symObjAddr: 0x3C3, symBinAddr: 0x43C3, symSize: 0x30 }
+  - { offsetInCU: 0x7A, offset: 0x845E1, size: 0x8, addend: 0x0, symName: _sharedController.sessionController, symObjAddr: 0x6928, symBinAddr: 0xC8A0, symSize: 0x0 }
+  - { offsetInCU: 0x90, offset: 0x845F7, size: 0x8, addend: 0x0, symName: _sharedController.onceToken, symObjAddr: 0x6930, symBinAddr: 0xC8A8, symSize: 0x0 }
+  - { offsetInCU: 0x199, offset: 0x84700, size: 0x8, addend: 0x0, symName: '-[EADSessionController _writeData]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x19E }
+  - { offsetInCU: 0x2B1, offset: 0x84818, size: 0x8, addend: 0x0, symName: '-[EADSessionController _readData]', symObjAddr: 0x19E, symBinAddr: 0x419E, symSize: 0x225 }
+  - { offsetInCU: 0x475, offset: 0x849DC, size: 0x8, addend: 0x0, symName: '___40+[EADSessionController sharedController]_block_invoke', symObjAddr: 0x3F3, symBinAddr: 0x43F3, symSize: 0x25 }
+  - { offsetInCU: 0x4A8, offset: 0x84A0F, size: 0x8, addend: 0x0, symName: '-[EADSessionController dealloc]', symObjAddr: 0x418, symBinAddr: 0x4418, symSize: 0x57 }
+  - { offsetInCU: 0x510, offset: 0x84A77, size: 0x8, addend: 0x0, symName: '-[EADSessionController setupControllerForAccessory:withProtocolString:]', symObjAddr: 0x46F, symBinAddr: 0x446F, symSize: 0x9D }
+  - { offsetInCU: 0x5FC, offset: 0x84B63, size: 0x8, addend: 0x0, symName: '-[EADSessionController openSession]', symObjAddr: 0x50C, symBinAddr: 0x450C, symSize: 0x205 }
+  - { offsetInCU: 0x7E5, offset: 0x84D4C, size: 0x8, addend: 0x0, symName: '-[EADSessionController closeSession]', symObjAddr: 0x711, symBinAddr: 0x4711, symSize: 0x1CF }
+  - { offsetInCU: 0x9B2, offset: 0x84F19, size: 0x8, addend: 0x0, symName: '-[EADSessionController writeData:]', symObjAddr: 0x8E0, symBinAddr: 0x48E0, symSize: 0x74 }
+  - { offsetInCU: 0xA52, offset: 0x84FB9, size: 0x8, addend: 0x0, symName: '-[EADSessionController readData:]', symObjAddr: 0x954, symBinAddr: 0x4954, symSize: 0x7A }
+  - { offsetInCU: 0xB06, offset: 0x8506D, size: 0x8, addend: 0x0, symName: '-[EADSessionController readBytesAvailable]', symObjAddr: 0x9CE, symBinAddr: 0x49CE, symSize: 0x16 }
+  - { offsetInCU: 0xB49, offset: 0x850B0, size: 0x8, addend: 0x0, symName: '-[EADSessionController accessoryDidDisconnect:]', symObjAddr: 0x9E4, symBinAddr: 0x49E4, symSize: 0x6 }
+  - { offsetInCU: 0xB84, offset: 0x850EB, size: 0x8, addend: 0x0, symName: '-[EADSessionController stream:handleEvent:]', symObjAddr: 0x9EA, symBinAddr: 0x49EA, symSize: 0x57 }
+  - { offsetInCU: 0xC14, offset: 0x8517B, size: 0x8, addend: 0x0, symName: '-[EADSessionController accessory]', symObjAddr: 0xA41, symBinAddr: 0x4A41, symSize: 0xA }
+  - { offsetInCU: 0xC49, offset: 0x851B0, size: 0x8, addend: 0x0, symName: '-[EADSessionController protocolString]', symObjAddr: 0xA4B, symBinAddr: 0x4A4B, symSize: 0xA }
+  - { offsetInCU: 0xC7E, offset: 0x851E5, size: 0x8, addend: 0x0, symName: '-[EADSessionController session]', symObjAddr: 0xA55, symBinAddr: 0x4A55, symSize: 0xA }
+  - { offsetInCU: 0xCB3, offset: 0x8521A, size: 0x8, addend: 0x0, symName: '-[EADSessionController setSession:]', symObjAddr: 0xA5F, symBinAddr: 0x4A5F, symSize: 0x11 }
+  - { offsetInCU: 0xCF2, offset: 0x85259, size: 0x8, addend: 0x0, symName: '-[EADSessionController writeData]', symObjAddr: 0xA70, symBinAddr: 0x4A70, symSize: 0xA }
+  - { offsetInCU: 0xD27, offset: 0x8528E, size: 0x8, addend: 0x0, symName: '-[EADSessionController setWriteData:]', symObjAddr: 0xA7A, symBinAddr: 0x4A7A, symSize: 0x11 }
+  - { offsetInCU: 0xD66, offset: 0x852CD, size: 0x8, addend: 0x0, symName: '-[EADSessionController readData]', symObjAddr: 0xA8B, symBinAddr: 0x4A8B, symSize: 0xA }
+  - { offsetInCU: 0xD9B, offset: 0x85302, size: 0x8, addend: 0x0, symName: '-[EADSessionController setReadData:]', symObjAddr: 0xA95, symBinAddr: 0x4A95, symSize: 0x11 }
+  - { offsetInCU: 0xDDA, offset: 0x85341, size: 0x8, addend: 0x0, symName: '-[EADSessionController .cxx_destruct]', symObjAddr: 0xAA6, symBinAddr: 0x4AA6, symSize: 0x49 }
+  - { offsetInCU: 0xE0D, offset: 0x85374, size: 0x8, addend: 0x0, symName: _BadElfSdk_SetupControllerForAccessory, symObjAddr: 0xAEF, symBinAddr: 0x4AEF, symSize: 0x9E }
+  - { offsetInCU: 0xEC8, offset: 0x8542F, size: 0x8, addend: 0x0, symName: _BadElfSdk_OpenSession, symObjAddr: 0xB8D, symBinAddr: 0x4B8D, symSize: 0x4E }
+  - { offsetInCU: 0xF0F, offset: 0x85476, size: 0x8, addend: 0x0, symName: _BadElfSdk_CloseSession, symObjAddr: 0xBDB, symBinAddr: 0x4BDB, symSize: 0x44 }
+  - { offsetInCU: 0xF52, offset: 0x854B9, size: 0x8, addend: 0x0, symName: _BadElfSdk_WriteData, symObjAddr: 0xC1F, symBinAddr: 0x4C1F, symSize: 0x9D }
+  - { offsetInCU: 0x1005, offset: 0x8556C, size: 0x8, addend: 0x0, symName: _BadElfSdk_ReadBytesAvailable, symObjAddr: 0xCBC, symBinAddr: 0x4CBC, symSize: 0x4B }
+  - { offsetInCU: 0x104C, offset: 0x855B3, size: 0x8, addend: 0x0, symName: _BadElfSdk_ReadData, symObjAddr: 0xD07, symBinAddr: 0x4D07, symSize: 0xB3 }
+  - { offsetInCU: 0x110D, offset: 0x85674, size: 0x8, addend: 0x0, symName: _BadElfSdk_FreePointer, symObjAddr: 0xDBA, symBinAddr: 0x4DBA, symSize: 0xA }
+...
