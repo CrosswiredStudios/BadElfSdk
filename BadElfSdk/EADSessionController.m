@@ -1,11 +1,5 @@
-//
-//  EADSessionController.m
-//  BadElfSdk
-//
-//  Created by Matthew Wood on 5/24/24.
-//
-
 #import "EADSessionController.h"
+#import <stdlib.h>
 
 #define SDK_NAME   @"BadElfSdk"
 
@@ -31,7 +25,7 @@ NSString *EADSessionDataReceivedNotification = @"EADSessionDataReceivedNotificat
             break;
         } else if (bytesWritten > 0) {
             [_writeData replaceBytesInRange:NSMakeRange(0, bytesWritten) withBytes:NULL length:0];
-            NSLog(@"%@bytesWritten %ld", SDK_NAME, (long)bytesWritten);
+            NSLog(@"%@ bytesWritten %ld", SDK_NAME, (long)bytesWritten);
         }
     }
 }
@@ -71,6 +65,10 @@ NSString *EADSessionDataReceivedNotification = @"EADSessionDataReceivedNotificat
 - (void)dealloc {
     [self closeSession];
     [self setupControllerForAccessory:nil withProtocolString:nil];
+}
+
+- (NSArray<EAAccessory *> *)connectedAccessories {
+    return [[EAAccessoryManager sharedAccessoryManager] connectedAccessories];
 }
 
 - (void)setupControllerForAccessory:(EAAccessory *)accessory withProtocolString:(NSString *)protocolString {
@@ -164,8 +162,49 @@ NSString *EADSessionDataReceivedNotification = @"EADSessionDataReceivedNotificat
 
 @end
 
-void BadElfSdk_SetupControllerForAccessory(EAAccessory *accessory, const char *protocolString) {
-    [[EADSessionController sharedController] setupControllerForAccessory:accessory withProtocolString:[NSString stringWithUTF8String:protocolString]];
+const BadElfAccessoryInfo *BadElfSdk_GetConnectedDevices(int *deviceCount) {
+    NSArray<EAAccessory *> *devices = [[EADSessionController sharedController] connectedAccessories];
+    *deviceCount = (int)[devices count];
+    NSLog(@"%@: Found %d devices", SDK_NAME, *deviceCount);
+    
+    if (*deviceCount == 0) {
+        return NULL;
+    }
+    
+    BadElfAccessoryInfo *accessoryInfos = (BadElfAccessoryInfo *)malloc(*deviceCount * sizeof(BadElfAccessoryInfo));
+    
+    for (int i = 0; i < *deviceCount; i++) {
+        EAAccessory *device = [devices objectAtIndex:i];
+        accessoryInfos[i].name = strdup([[device name] UTF8String]);
+        accessoryInfos[i].modelNumber = strdup([[device modelNumber] UTF8String]);
+        accessoryInfos[i].serialNumber = strdup([[device serialNumber] UTF8String]);
+        accessoryInfos[i].hardwareRevision = strdup([[device hardwareRevision] UTF8String]);
+        accessoryInfos[i].firmwareRevision = strdup([[device firmwareRevision] UTF8String]);
+        NSString *protocolString = [[device protocolStrings] firstObject];
+        accessoryInfos[i].protocolString = strdup([protocolString UTF8String]);
+    }
+    
+    return accessoryInfos;
+}
+
+void BadElfSdk_FreeAccessoryInfo(const BadElfAccessoryInfo *infoArray, int count) {
+    for (int i = 0; i < count; i++) {
+        free((void *)infoArray[i].name);
+        free((void *)infoArray[i].modelNumber);
+        free((void *)infoArray[i].serialNumber);
+        free((void *)infoArray[i].hardwareRevision);
+        free((void *)infoArray[i].firmwareRevision);
+        free((void *)infoArray[i].protocolString);
+    }
+    free((void *)infoArray);
+}
+
+void BadElfSdk_SetupControllerForAccessory(int index, const char *protocolString) {
+    NSArray<EAAccessory *> *devices = [[EADSessionController sharedController] connectedAccessories];
+    if (index < [devices count]) {
+        EAAccessory *accessory = [devices objectAtIndex:index];
+        [[EADSessionController sharedController] setupControllerForAccessory:accessory withProtocolString:[NSString stringWithUTF8String:protocolString]];
+    }
 }
 
 bool BadElfSdk_OpenSession(void) {
@@ -195,4 +234,3 @@ const char *BadElfSdk_ReadData(unsigned int bytesToRead) {
 void BadElfSdk_FreePointer(const char *ptr) {
     free((void *)ptr);
 }
-
